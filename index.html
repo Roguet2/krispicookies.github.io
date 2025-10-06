@@ -7,34 +7,36 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #fffaf5 0%, #ffe3cf 100%);
-      color: #4b2e05;
+      background: linear-gradient(180deg, #fffefc 0%, #d9f1ff 100%);
+      color: #2b6cb0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
-      text-align: center;
       margin: 0;
+      text-align: center;
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 1.5em;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
     h1 {
       font-size: 3em;
-      margin: 0.2em 0;
+      margin: 0;
+      color: #0069d9;
     }
     p {
       font-size: 1.3em;
-      max-width: 500px;
-    }
-    .logo {
-      width: 150px;
-      margin-bottom: 1.5em;
-    }
-    .email {
-      margin-top: 1.5em;
-      font-size: 1em;
+      color: #333;
     }
     a {
-      color: #d86b00;
+      color: #0069d9;
       text-decoration: none;
       font-weight: 600;
     }
@@ -44,9 +46,9 @@
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Krispi Cookies logo" class="logo" onerror="this.style.display='none'">
+  <img src="logo.png" alt="Krispi Cookies logo" class="logo">
   <h1>Krispi Cookies</h1>
   <p>Something delicious is baking… our website is coming soon!</p>
-  <p class="email">Got a craving? <a href="mailto:tnevin.cel@gmail.com">Email us</a> to pre-order or get updates 🍪</p>
+  <p><a href="mailto:hello@krispicookies.ie">Email us</a> for pre-orders or updates 🍪</p>
 </body>
 </html>
