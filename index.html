@@ -2,53 +2,154 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Krispi Cookies</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Handmade, freshly baked cookies in Ireland. Pre-order Krispi Cookies for pickup or delivery.">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Krispi Cookies 🍪" />
+  <meta property="og:description" content="Something delicious is baking… pre-order now!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.krispicookies.ie/" />
+  <meta property="og:image" content="https://www.krispicookies.ie/images/og-cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Brand -->
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="theme-color" content="#0069d9" />
+
+  <!-- Fonts (you were using Poppins—now actually load it) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(180deg, #fffefc 0%, #d9f1ff 100%);
-      color: #2b6cb0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
+    :root{
+      --brand:#0069d9;
+      --text:#2b6cb0;
+      --ink:#1b2a4a;
+      --bg1:#fffefc;
+      --bg2:#d9f1ff;
     }
-    .logo {
-      width: 200px;
-      margin-bottom: 1.5em;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
+      color: var(--ink);
+      margin:0;
+      display:flex; min-height:100%;
+    }
+    main{
+      margin:auto;
+      text-align:center;
+      padding: 3rem 1.25rem;
+      max-width: 820px;
+    }
+    .logo{
+      width: 180px;
+      height:auto;
+      margin-bottom: 1.25rem;
       animation: float 3s ease-in-out infinite;
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    h1{
+      font-size: clamp(2rem, 3.5vw + 1rem, 3.25rem);
+      margin: 0.25rem 0 0.25rem;
+      color: var(--brand);
+      letter-spacing: 0.3px;
     }
-    h1 {
-      font-size: 3em;
-      margin: 0;
-      color: #0069d9;
+    p.lead{
+      font-size: clamp(1.05rem, 1.2vw + .6rem, 1.35rem);
+      margin: 0.35rem 0 1.25rem;
+      color:#333;
     }
-    p {
-      font-size: 1.3em;
-      color: #333;
+    .badges{
+      display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin-bottom:1.25rem;
     }
-    a {
-      color: #0069d9;
-      text-decoration: none;
-      font-weight: 600;
+    .badge{
+      font-size:.85rem; border:1px solid rgba(0,0,0,.08); padding:.35rem .6rem; border-radius:999px; background:#fff8;
+      backdrop-filter:saturate(140%) blur(4px);
     }
-    a:hover {
-      text-decoration: underline;
+    .cta{
+      display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; margin-top:1rem;
+    }
+    .btn{
+      display:inline-block;
+      padding:.9rem 1.15rem;
+      border-radius:12px;
+      font-weight:600;
+      text-decoration:none;
+      border:2px solid var(--brand);
+      transition: transform .05s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+      box-shadow: 0 6px 14px rgba(0,105,217,.15);
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn.primary{
+      background: var(--brand);
+      color: #fff;
+    }
+    .btn.primary:hover{ box-shadow:0 10px 20px rgba(0,105,217,.25) }
+    .btn.ghost{
+      background:#fff;
+      color: var(--brand);
+    }
+    footer{
+      margin-top:2rem; font-size:.9rem; color:#456;
+    }
+    footer a{ color:var(--text); text-decoration:none; font-weight:600 }
+    footer a:hover{ text-decoration:underline }
+    /* Accessibility tweak: prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce){
+      .logo{ animation:none }
     }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Krispi Cookies logo" class="logo">
-  <h1>Krispi Cookies</h1>
-  <p>Something delicious is baking… our website is coming soon!</p>
-  <p><a href="mailto:hello@krispicookies.ie">Email us</a> for pre-orders or updates 🍪</p>
+  <main role="main" aria-labelledby="site-title">
+    <img src="/logo.png" alt="Krispi Cookies logo" class="logo" width="360" height="360" decoding="async" />
+    <h1 id="site-title">Krispi Cookies</h1>
+    <p class="lead">Something delicious is baking… our website is coming soon!</p>
+
+    <div class="badges" aria-hidden="true">
+      <span class="badge">Small-batch</span>
+      <span class="badge">Handmade</span>
+      <span class="badge">Ireland</span>
+    </div>
+
+    <div class="cta" aria-label="Contact and ordering">
+      <!-- Replace the Google Forms link when ready -->
+      <a class="btn primary" href="mailto:hello@krispicookies.ie" aria-label="Email Krispi Cookies to pre-order">Pre-order by Email</a>
+      <a class="btn ghost" href="https://www.instagram.com/krispicookies.ie" target="_blank" rel="noopener" aria-label="Visit our Instagram">Follow on Instagram</a>
+      <!-- Example placeholder – uncomment when you have a form -->
+      <!-- <a class="btn ghost" href="https://forms.gle/your-form" target="_blank" rel="noopener">Order Form</a> -->
+    </div>
+
+    <footer>
+      <p>Questions? <a href="mailto:hello@krispicookies.ie">hello@krispicookies.ie</a></p>
+      <p>© <span id="y"></span> Krispi Cookies</p>
+    </footer>
+  </main>
+
+  <!-- LocalBusiness Schema (helps Google understand you). Adjust details later. -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Bakery",
+    "name":"Krispi Cookies",
+    "url":"https://www.krispicookies.ie/",
+    "email":"hello@krispicookies.ie",
+    "image":"https://www.krispicookies.ie/images/og-cover.jpg",
+    "address": { "@type":"PostalAddress", "addressCountry":"IE" },
+    "sameAs": ["https://www.instagram.com/krispicookies.ie"]
+  }
+  </script>
+  <script>
+    // keep the copyright year current
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+  <noscript>JavaScript is only used here for the year; everything else works without it.</noscript>
 </body>
 </html>
