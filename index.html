@@ -105,6 +105,32 @@
     @media (prefers-reduced-motion: reduce){
       .logo{ animation:none }
     }
+    /* --- Cookies grid --- */
+    #cookies{margin-top:2.25rem}
+    #cookies h2{
+      font-size: clamp(1.6rem, 2.2vw + .8rem, 2.2rem);
+      margin: .25rem 0 1rem; color: var(--brand); text-align:center;
+    }
+    .cookies-grid{
+      display:grid; gap:1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      align-items: stretch;
+    }
+    .cookie-card{
+      background:#fff; border:1px solid rgba(0,0,0,.06);
+      border-radius:16px; overflow:hidden;
+      box-shadow:0 8px 18px rgba(0,0,0,.06);
+      display:flex; flex-direction:column;
+    }
+    .cookie-card img{
+      width:100%; height:180px; object-fit:cover; display:block;
+    }
+    .cookie-card .body{padding:0.9rem 1rem 1.1rem; display:flex; flex-direction:column; gap:.5rem; flex:1}
+    .cookie-card h3{margin:.1rem 0; font-size:1.05rem; color:#222}
+    .cookie-card p{margin:0; color:#444; font-size:.95rem}
+    .cookie-card .cta{margin-top:auto; display:flex; gap:.5rem; flex-wrap:wrap}
+    .cookie-card .btn{width:100%; text-align:center}
+
   </style>
 </head>
 <body>
@@ -118,6 +144,97 @@
       <span class="badge">Handmade</span>
       <span class="badge">Ireland</span>
     </div>
+    <section id="cookies" aria-labelledby="cookies-title">
+      <h2 id="cookies-title">Our Cookies</h2>
+      <div class="cookies-grid">
+    
+        <article class="cookie-card">
+          <img src="/images/cookies/chocolate-chip.jpg" alt="Classic Chocolate Chip cookie" loading="lazy" />
+          <div class="body">
+            <h3>Classic Chocolate Chip</h3>
+            <p>Buttery, crisp edges, gooey middle.</p>
+            <div class="cta">
+              <a class="btn ghost" href="/pdfs/chocolate-chip.pdf" target="_blank" rel="noopener">
+                Nutritional Info (PDF)
+              </a>
+            </div>
+          </div>
+        </article>
+    
+        <article class="cookie-card">
+          <img src="/images/cookies/double-choc.jpg" alt="Double Chocolate cookie" loading="lazy" />
+          <div class="body">
+            <h3>Double Chocolate</h3>
+            <p>Rich cocoa dough with dark-chip bursts.</p>
+            <div class="cta">
+              <a class="btn ghost" href="/pdfs/double-chocolate.pdf" target="_blank" rel="noopener">
+                Nutritional Info (PDF)
+              </a>
+            </div>
+          </div>
+        </article>
+    
+        <article class="cookie-card">
+          <img src="/images/cookies/red-velvet.jpg" alt="Red Velvet cookie" loading="lazy" />
+          <div class="body">
+            <h3>Red Velvet</h3>
+            <p>Creamy white chips in a velvet base.</p>
+            <div class="cta">
+              <a class="btn ghost" href="/pdfs/red-velvet.pdf" target="_blank" rel="noopener">
+                Nutritional Info (PDF)
+              </a>
+            </div>
+          </div>
+        </article>
+    
+        <article class="cookie-card">
+          <img src="/images/cookies/biscoff-stuffed.jpg" alt="Biscoff stuffed cookie split open" loading="lazy" />
+          <div class="body">
+            <h3>Biscoff Stuffed</h3>
+            <p>Spiced crumble, molten Biscoff center.</p>
+            <div class="cta">
+              <a class="btn ghost" href="/pdfs/biscoff-stuffed.pdf" target="_blank" rel="noopener">
+                Nutritional Info (PDF)
+              </a>
+            </div>
+          </div>
+        </article>
+    
+        <article class="cookie-card">
+          <img src="/images/cookies/nutella-core.jpg" alt="Nutella core cookie with oozing center" loading="lazy" />
+          <div class="body">
+            <h3>Nutella Core</h3>
+            <p>Hazelnut-choc center, soft crumb.</p>
+            <div class="cta">
+              <a class="btn ghost" href="/pdfs/nutella-core.pdf" target="_blank" rel="noopener">
+                Nutritional Info (PDF)
+              </a>
+            </div>
+          </div>
+        </article>
+    
+        <article class="cookie-card">
+          <img src="/images/cookies/oatmeal-raisin.jpg" alt="Oatmeal raisin cookie" loading="lazy" />
+          <div class="body">
+            <h3>Oatmeal Raisin</h3>
+            <p>Toasted oats, juicy raisins, cinnamon.</p>
+            <div class="cta">
+              <a class="btn ghost" href="/pdfs/oatmeal-raisin.pdf" target="_blank" rel="noopener">
+                Nutritional Info (PDF)
+              </a>
+            </div>
+          </div>
+        </article>
+    
+      </div>
+    
+      <!-- Optional: one master PDF if you have a full sheet -->
+      <!-- <p style="text-align:center;margin-top:1rem">
+        <a class="btn primary" href="/pdfs/krispi-cookies-nutrition-all.pdf" target="_blank" rel="noopener">
+          Download Full Nutrition Sheet (PDF)
+        </a>
+      </p> -->
+    </section>
 
     <div class="cta" aria-label="Contact and ordering">
       <!-- Replace the Google Forms link when ready -->
