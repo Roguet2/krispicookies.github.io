@@ -109,7 +109,10 @@
     #cookies{margin-top:2.25rem}
     #cookies h2{
       font-size: clamp(1.6rem, 2.2vw + .8rem, 2.2rem);
-      margin: .25rem 0 1rem; color: var(--brand); text-align:center;
+      margin:.25rem 0 1rem; color: var(--brand); text-align:center;
+    }
+    #cookies h3{
+      margin:1.4rem 0 .75rem; color:#222; font-size:1.15rem; text-align:left;
     }
     .cookies-grid{
       display:grid; gap:1rem;
@@ -126,10 +129,17 @@
       width:100%; height:180px; object-fit:cover; display:block;
     }
     .cookie-card .body{padding:0.9rem 1rem 1.1rem; display:flex; flex-direction:column; gap:.5rem; flex:1}
-    .cookie-card h3{margin:.1rem 0; font-size:1.05rem; color:#222}
+    .cookie-card h4{margin:.1rem 0; font-size:1.05rem; color:#222}
     .cookie-card p{margin:0; color:#444; font-size:.95rem}
-    .cookie-card .cta{margin-top:auto; display:flex; gap:.5rem; flex-wrap:wrap}
+    .cookie-card .cta{margin-top:auto; display:flex}
     .cookie-card .btn{width:100%; text-align:center}
+
+.allergen{
+  font-size:0.8rem;
+  color:#666;
+  line-height:1.3;
+  font-style:italic;
+}
 
   </style>
 </head>
@@ -147,102 +157,119 @@
 
     <div class="cta" aria-label="Contact and ordering">
       <!-- Replace the Google Forms link when ready -->
-      <a class="btn primary" href="hhtps://forms.gle/XLugz1K7H7xuRFjZA" aria-label="Order Now">Order Now</a>
+      <a class="btn primary" href="https://forms.gle/XLugz1K7H7xuRFjZA" aria-label="Order Now">Order Now</a>
       <a class="btn ghost" href="https://www.instagram.com/krispicookies.ie" target="_blank" rel="noopener" aria-label="Visit our Instagram">Follow on Instagram</a>
       <!-- Example placeholder – uncomment when you have a form -->
       <!-- <a class="btn ghost" href="https://forms.gle/your-form" target="_blank" rel="noopener">Order Form</a> -->
     </div>
-    <section id="cookies" aria-labelledby="cookies-title">
-      <h2 id="cookies-title">Our Cookies</h2>
-      <div class="cookies-grid">
-    
-        <article class="cookie-card">
-          <img src="/images/cookies/chocolate-chip.jpg" alt="Classic Chocolate Chip cookie" loading="lazy" />
-          <div class="body">
-            <h3>Classic Chocolate Chip</h3>
-            <p>Buttery, crisp edges, gooey middle.</p>
-            <div class="cta">
-              <a class="btn ghost" href="/pdfs/chocolate-chip.pdf" target="_blank" rel="noopener">
-                Nutritional Info (PDF)
-              </a>
-            </div>
-          </div>
-        </article>
-    
-        <article class="cookie-card">
-          <img src="/images/cookies/double-choc.jpg" alt="Double Chocolate cookie" loading="lazy" />
-          <div class="body">
-            <h3>Double Chocolate</h3>
-            <p>Rich cocoa dough with dark-chip bursts.</p>
-            <div class="cta">
-              <a class="btn ghost" href="/pdfs/double-chocolate.pdf" target="_blank" rel="noopener">
-                Nutritional Info (PDF)
-              </a>
-            </div>
-          </div>
-        </article>
-    
-        <article class="cookie-card">
-          <img src="/images/cookies/red-velvet.jpg" alt="Red Velvet cookie" loading="lazy" />
-          <div class="body">
-            <h3>Red Velvet</h3>
-            <p>Creamy white chips in a velvet base.</p>
-            <div class="cta">
-              <a class="btn ghost" href="/pdfs/red-velvet.pdf" target="_blank" rel="noopener">
-                Nutritional Info (PDF)
-              </a>
-            </div>
-          </div>
-        </article>
-    
-        <article class="cookie-card">
-          <img src="/images/cookies/biscoff-stuffed.jpg" alt="Biscoff stuffed cookie split open" loading="lazy" />
-          <div class="body">
-            <h3>Biscoff Stuffed</h3>
-            <p>Spiced crumble, molten Biscoff center.</p>
-            <div class="cta">
-              <a class="btn ghost" href="/pdfs/biscoff-stuffed.pdf" target="_blank" rel="noopener">
-                Nutritional Info (PDF)
-              </a>
-            </div>
-          </div>
-        </article>
-    
-        <article class="cookie-card">
-          <img src="/images/cookies/nutella-core.jpg" alt="Nutella core cookie with oozing center" loading="lazy" />
-          <div class="body">
-            <h3>Nutella Core</h3>
-            <p>Hazelnut-choc center, soft crumb.</p>
-            <div class="cta">
-              <a class="btn ghost" href="/pdfs/nutella-core.pdf" target="_blank" rel="noopener">
-                Nutritional Info (PDF)
-              </a>
-            </div>
-          </div>
-        </article>
-    
-        <article class="cookie-card">
-          <img src="/images/cookies/oatmeal-raisin.jpg" alt="Oatmeal raisin cookie" loading="lazy" />
-          <div class="body">
-            <h3>Oatmeal Raisin</h3>
-            <p>Toasted oats, juicy raisins, cinnamon.</p>
-            <div class="cta">
-              <a class="btn ghost" href="/pdfs/oatmeal-raisin.pdf" target="_blank" rel="noopener">
-                Nutritional Info (PDF)
-              </a>
-            </div>
-          </div>
-        </article>
-    
+
+<section id="cookies" aria-labelledby="cookies-title">
+  <h2 id="cookies-title">This Month’s Flavours</h2>
+
+  <h3>Classics</h3>
+  <div class="cookies-grid">
+
+    <article class="cookie-card">
+      <img src="/images/cookies/classic-chocolate-chip.jpg" alt="Classic Chocolate Chip cookie" loading="lazy" />
+      <div class="body">
+        <h4>Classic Chocolate Chip</h4>
+        <p>Buttery dough, crisp edges, gooey middle.</p>
+        <p class="allergen">Contains: wheat, milk, eggs, soy. May contain traces of nuts.</p>
+        <div class="cta">
+          <a class="btn ghost" href="/pdfs/classic-chocolate-chip.pdf" target="_blank" rel="noopener">Nutritional Info (PDF)</a>
+        </div>
       </div>
-    
-      <!-- Optional: one master PDF if you have a full sheet -->
-      <!-- <p style="text-align:center;margin-top:1rem">
-        <a class="btn primary" href="/pdfs/krispi-cookies-nutrition-all.pdf" target="_blank" rel="noopener">
-          Download Full Nutrition Sheet (PDF)
-        </a>
-      </p> -->
-    </section>
+    </article>
+
+    <article class="cookie-card">
+      <img src="/images/cookies/triple-chocolate.jpg" alt="Triple Chocolate cookie" loading="lazy" />
+      <div class="body">
+        <h4>Triple Chocolate</h4>
+        <p>Dark, milk & white chocolate in every bite.</p>
+        <p class="allergen">Contains: wheat, milk, eggs, soy. May contain traces of nuts.</p>
+        <div class="cta">
+          <a class="btn ghost" href="/pdfs/triple-chocolate.pdf" target="_blank" rel="noopener">Nutritional Info (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="cookie-card">
+      <img src="/images/cookies/sprinkle.jpg" alt="Sprinkle cookie with rainbow sprinkles" loading="lazy" />
+      <div class="body">
+        <h4>Sprinkle</h4>
+        <p>Soft vanilla crumb, rainbow crunch.</p>
+        <p class="allergen">Contains: wheat, milk, eggs. May contain traces of nuts.</p>
+        <div class="cta">
+          <a class="btn ghost" href="/pdfs/sprinkle.pdf" target="_blank" rel="noopener">Nutritional Info (PDF)</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <h3>Stuffed</h3>
+  <div class="cookies-grid">
+
+    <article class="cookie-card">
+      <img src="/images/cookies/biscoff-stuffed.jpg" alt="Biscoff stuffed cookie split open" loading="lazy" />
+      <div class="body">
+        <h4>Biscoff</h4>
+        <p>Spiced crumble with a molten Biscoff centre.</p>
+        <p class="allergen">Contains: wheat, milk, eggs, soy. May contain traces of nuts.</p>
+        <div class="cta">
+          <a class="btn ghost" href="/pdfs/biscoff-stuffed.pdf" target="_blank" rel="noopener">Nutritional Info (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="cookie-card">
+      <img src="/images/cookies/kinder-bueno-stuffed.jpg" alt="Kinder Bueno stuffed cookie" loading="lazy" />
+      <div class="body">
+        <h4>Kinder Bueno</h4>
+        <p>Hazelnut cream core, milk-choc drizzle.</p>
+        <p class="allergen">Contains: wheat, milk, eggs, soy, hazelnuts.</p>
+        <div class="cta">
+          <a class="btn ghost" href="/pdfs/kinder-bueno-stuffed.pdf" target="_blank" rel="noopener">Nutritional Info (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="cookie-card">
+      <img src="/images/cookies/dubai-chocolate-stuffed.jpg" alt="Dubai Chocolate stuffed cookie" loading="lazy" />
+      <div class="body">
+        <h4>Dubai Chocolate</h4>
+        <p>Luxuriously rich, date & choc-inspired.</p>
+        <p class="allergen">Contains: wheat, milk, eggs, soy. May contain traces of nuts.</p>
+        <div class="cta">
+          <a class="btn ghost" href="/pdfs/dubai-chocolate-stuffed.pdf" target="_blank" rel="noopener">Nutritional Info (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="cookie-card">
+      <img src="/images/cookies/mm-stuffed.jpg" alt="Cookie stuffed with M&Ms" loading="lazy" />
+      <div class="body">
+        <h4>M&amp;M</h4>
+        <p>Colourful candy shells, soft centre.</p>
+        <p class="allergen">Contains: wheat, milk, eggs, soy. May contain traces of nuts.</p>
+        <div class="cta">
+          <a class="btn ghost" href="/pdfs/mm-stuffed.pdf" target="_blank" rel="noopener">Nutritional Info (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="cookie-card">
+      <img src="/images/cookies/milky-bar-stuffed.jpg" alt="Milky Bar white-chocolate stuffed cookie" loading="lazy" />
+      <div class="body">
+        <h4>Milky Bar</h4>
+        <p>Creamy white-choc middle, vanilla dough.</p>
+        <p class="allergen">Contains: wheat, milk, eggs, soy. May contain traces of nuts.</p>
+        <div class="cta">
+          <a class="btn ghost" href="/pdfs/milky-bar-stuffed.pdf" target="_blank" rel="noopener">Nutritional Info (PDF)</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
 
 
     <footer>
