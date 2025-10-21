@@ -175,6 +175,52 @@
     
     /* optional: slightly stronger CTA on hover */
     .cookie-card .btn:hover{ transform: translateY(-1px); box-shadow:0 12px 22px rgba(0,105,217,.25); }
+    
+    /* Keep the whole page from stretching too wide */
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Responsive grid that auto-fits as many columns as will fit */
+    .flavour-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    
+    /* Force more columns on large monitors if you want a denser look */
+    @media (min-width: 1200px) {
+      .flavour-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (min-width: 1600px) {
+      .flavour-grid { grid-template-columns: repeat(5, 1fr); }
+    }
+    
+    /* Card polish */
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.06);
+      overflow: hidden;
+    }
+    .card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;     /* consistent tile heights */
+      object-fit: cover;
+    }
+    .card h4 { margin: .75rem 1rem 0; font-size: 1.1rem; }
+    .card p { margin: .25rem 1rem; }
+    .card .allergen { color: #666; font-size: .9rem; }
+    .card .nutri { display: inline-block; margin: .25rem 1rem 1rem; }
+    
+    /* Small hover nicety on desktop */
+    @media (hover:hover) {
+      .card img { transition: transform .25s; }
+      .card:hover img { transform: scale(1.02); }
+    }
 
   </style>
 </head>
@@ -198,7 +244,7 @@
       <!-- <a class="btn ghost" href="https://forms.gle/your-form" target="_blank" rel="noopener">Order Form</a> -->
     </div>
 
-<section id="cookies" aria-labelledby="cookies-title">
+<section id="cookies" aria-labelledby="cookies-title" class="page">
   <h2 id="cookies-title">This Month’s Flavours</h2>
 
   <h3>Classics</h3>
